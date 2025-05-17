@@ -1,35 +1,22 @@
 
-import React, { useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
-import { Frown, ArrowLeft } from "lucide-react";
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center max-w-lg mx-auto p-8">
-        <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-6">
-          <Frown className="h-10 w-10 text-muted-foreground" />
-        </div>
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-muted-foreground mb-6">
-          La page que vous recherchez n'existe pas ou a été déplacée.
+    <div className="flex flex-col items-center justify-center py-16">
+      <div className="max-w-md text-center">
+        <div className="text-6xl font-bold text-gray-300">404</div>
+        <h1 className="mt-4 text-3xl font-bold text-gray-900 dark:text-white">Page not found</h1>
+        <p className="mt-6 text-base text-gray-600 dark:text-gray-400">
+          Sorry, we couldn't find the meme you're looking for. It might have been deleted or never existed in the first place.
         </p>
-        <Link 
-          to="/" 
-          className="inline-flex items-center px-4 py-2 bg-agri-primary text-white rounded-lg hover:bg-agri-primary-dark transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Retour à l'accueil
-        </Link>
+        <div className="mt-10">
+          <Link to="/">
+            <Button>Back to home</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
