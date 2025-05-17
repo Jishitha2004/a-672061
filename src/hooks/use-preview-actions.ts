@@ -60,7 +60,12 @@ export const usePreviewActions = ({
       return;
     }
     
-    const html = generatePreviewHTML(data, moduleName, title, columns, settings.locale);
+    // Fix the error by providing the correct number of arguments to generatePreviewHTML
+    const html = generatePreviewHTML(data, {
+      title: title,
+      columns: columns,
+      locale: settings.locale
+    });
     setPreviewHTML(html);
     setPreviewOpen(true);
   };

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -15,7 +14,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import AuthModal from '../auth/AuthModal';
-import { Flag, ThumbsUp, ThumbsDown, MessageSqule } from 'lucide-react';
+import { Flag, ThumbsUp, ThumbsDown, MessageSquare } from 'lucide-react';
 
 interface MemeCardProps {
   meme: Meme;
@@ -171,7 +170,7 @@ const MemeCard = ({ meme, isFeatured = false }: MemeCardProps) => {
                 <Collapsible open={isCommentsOpen} onOpenChange={setIsCommentsOpen}>
                   <CollapsibleTrigger asChild>
                     <Button variant="ghost" size="sm" className="text-sm text-gray-600">
-                      <MessageSqule className="h-4 w-4 mr-1" /> {meme.comments.length} comments
+                      <MessageSquare className="h-4 w-4 mr-1" /> {meme.comments.length} comments
                     </Button>
                   </CollapsibleTrigger>
                 </Collapsible>
