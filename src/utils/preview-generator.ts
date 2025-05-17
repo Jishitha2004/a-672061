@@ -1,6 +1,4 @@
 
-import { useAppSettings } from '@/contexts/AppSettingsContext';
-
 /**
  * Generate HTML content for preview based on data and columns
  */
